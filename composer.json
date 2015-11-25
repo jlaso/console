@@ -1,0 +1,23 @@
+{
+  "name": "jlaso/console",
+  "description": "helper to handle options on console",
+  "type": "library",
+  "homepage": "https://github.com/jlaso/console",
+  "authors": [
+    {
+      "name": "Joseluis Laso",
+      "email": "jlaso@joseluislaso.es",
+      "homepage": "http://www.joseluislaso.es",
+      "role": "Developer"
+    }
+  ],
+  "license" : "MIT",
+  "autoload": {
+    "psr-4": {
+      "JLaso\\Console\\": "src"
+    }
+  },
+  "require": {
+	  "php": ">5.4"
+  }
+}

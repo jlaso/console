@@ -106,7 +106,8 @@ class ArgumentsHelper
         foreach ($this->options as $option) {
             $help .= "\t- " . $option->getOption() . ": is " . $option->getType()->getDescription() .
                 ($option->getHelp() ? " and represents \"" . $option->getHelp() . "\"" : "") .
-                ($option->getDefault() ? " the default value is '" . $option->getDefault() . "'" : "") . "\n";
+                ($option->getDefault() ? " the default value is '" . $option->getDefault() . "'" : "") .
+                ($option->hasAlternatives() ? ". The alternatives are '" . join(",", $option->getAlternatives()) . "'" : "") . "\n";
         }
         $help .= "\n";
 

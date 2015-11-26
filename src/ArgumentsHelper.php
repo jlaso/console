@@ -16,7 +16,9 @@ class ArgumentsHelper
         $this->options = array();
     }
 
-
+    /**
+     * @return ArgumentsHelper
+     */
     public static function getInstance()
     {
         if (!self::$instance) {

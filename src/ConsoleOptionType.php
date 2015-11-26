@@ -2,6 +2,9 @@
 
 namespace JLaso\Console;
 
+use JLaso\Assert\Assert;
+use JLaso\Assert\AssertException;
+
 class ConsoleOptionType
 {
     const OPTIONAL = "::";
@@ -10,11 +13,19 @@ class ConsoleOptionType
 
     protected $value = null;
 
+    /**
+     * @param $value
+     * @throws AssertException
+     */
     public function __construct($value)
     {
+        Assert::assertsIsInArray($value, $this->getOptions());
         $this->value = $value;
     }
 
+    /**
+     * @return array
+     */
     public static function getOptions()
     {
         return [
@@ -58,16 +69,25 @@ class ConsoleOptionType
         return "UNKNOWN";
     }
 
+    /**
+     * @return ConsoleOptionType
+     */
     public static function OPTIONAL()
     {
         return new static(self::OPTIONAL);
     }
 
+    /**
+     * @return ConsoleOptionType
+     */
     public static function REQUIRED()
     {
         return new static(self::REQUIRED);
     }
 
+    /**
+     * @return ConsoleOptionType
+     */
     public static function NO_ARG()
     {
         return new static(self::NO_ARG);

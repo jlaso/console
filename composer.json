@@ -2,6 +2,7 @@
   "name": "jlaso/console",
   "description": "helper to handle options on console",
   "type": "library",
+  "version": "1.0.0",
   "homepage": "https://github.com/jlaso/console",
   "authors": [
     {
